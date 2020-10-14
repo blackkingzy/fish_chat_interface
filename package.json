@@ -1,0 +1,22 @@
+{
+    "name": "fish_chat_interface",
+    "version": "1.0.0",
+    "description": "fish chat interface",
+    "main": "index.js",
+    "scripts": {
+        "dev": "ts-node ./src/server.ts",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "socket"
+    ],
+    "author": "zhangyue",
+    "license": "MIT",
+    "dependencies": {
+        "black-ts": "^1.0.9",
+        "socket.io": "^2.3.0"
+    },
+    "devDependencies": {
+        "@types/socket.io": "^2.1.11"
+    }
+}
