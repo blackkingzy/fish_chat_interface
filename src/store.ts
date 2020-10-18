@@ -1,10 +1,24 @@
 import { Room, User, Rooms } from "./type";
 import { remove } from "./untils";
 
-class Store {
+export class Store {
+    public static instance: Store | undefined
+
     public room_count = 0;
 
     public rooms: Rooms = {};
+
+    /**
+     * 获取实例
+     * 单例模式
+     */
+    public static getInstance() {
+        if (!Store.instance) {
+            Store.instance = new Store()
+            return Store.instance
+        }
+        return Store.instance
+    }
 
     /**
      * 创建房间
@@ -17,6 +31,7 @@ class Store {
             user_count: 1,
         };
         this.rooms[room_id] = newRoom;
+        this.room_count += 1
     }
 
     /**
@@ -36,8 +51,25 @@ class Store {
      */
     quitRoom(user: User, room_id: string) {
         this.rooms[room_id].users = this.rooms[room_id].users.filter((item) => {
-            return item.name !== user.name;
+            //改为post请求后再改回来
+            // return item.name !== user.name;
+            return item !== user;
         });
+        //判断是否是房间内的最后一个人
+        if (this.rooms[room_id].user_count - 1 < 1) {
+            this.deleteRoom(room_id)
+        } else {
+            this.rooms[room_id].user_count -= 1
+        }
+    }
+
+    /**
+     * 删除房间
+     * @param room_id
+     */
+    deleteRoom(room_id: string) {
+        delete this.rooms[room_id]
+        this.room_count -= 1
     }
 
     /**
@@ -54,5 +86,3 @@ class Store {
     }
 }
 
-
-export default new Store()
