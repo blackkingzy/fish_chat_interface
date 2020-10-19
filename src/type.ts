@@ -1,13 +1,13 @@
-
 export interface User {
+    user_id: string;
     name: string;
 }
 
 export interface Room {
-    users: Array<User>
-    user_count: number
+    users: Array<User>;
+    user_count: number;
 }
 
 export interface Rooms {
-    [room_id: string]: Room
+    [room_No: string]: Room;
 }
