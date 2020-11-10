@@ -13,7 +13,7 @@
     "author": "zhangyue",
     "license": "MIT",
     "dependencies": {
-        "black-ts": "^1.0.12",
+        "black-ts": "^1.0.14",
         "socket.io": "^2.3.0"
     },
     "devDependencies": {

@@ -1,0 +1,68 @@
+2020.11.10 23:14:09:583 error: TypeError: Cannot destructure property 'user_info' of 'ctx.data' as it is undefined.
+    at getInfo (/Volumes/T7/projects/fish_chat_interface/src/controller/userController.ts:105:17)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-router/lib/router.js:372:16
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-router/lib/router.js:377:31)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at exports.initStore (/Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:6:11)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:50:19
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/util.js:33:15
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-body/index.js:148:14
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at exports.globalHandleError (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/error.js:8:9)
+2020.11.10 23:15:51:734 error: TypeError: Cannot destructure property 'user_info' of 'ctx.data' as it is undefined.
+    at getInfo (/Volumes/T7/projects/fish_chat_interface/src/controller/userController.ts:107:17)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-router/lib/router.js:372:16
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-router/lib/router.js:377:31)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at exports.initStore (/Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:6:11)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:50:19
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/util.js:33:15
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-body/index.js:148:14
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at exports.globalHandleError (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/error.js:8:9)
+2020.11.10 23:17:14:143 error: TypeError: Cannot destructure property 'user_info' of 'ctx.data' as it is undefined.
+    at getInfo (/Volumes/T7/projects/fish_chat_interface/src/controller/userController.ts:111:17)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-router/lib/router.js:372:16
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-router/lib/router.js:377:31)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at exports.initStore (/Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:6:11)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:50:19
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/util.js:33:15
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-body/index.js:148:14
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at exports.globalHandleError (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/error.js:8:9)
+2020.11.10 23:21:49:283 error: TypeError: Cannot destructure property 'user_info' of 'ctx.data' as it is undefined.
+    at getInfo (/Volumes/T7/projects/fish_chat_interface/src/controller/userController.ts:111:17)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-router/lib/router.js:372:16
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-router/lib/router.js:377:31)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at exports.initStore (/Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:6:11)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:50:19
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/util.js:33:15
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-body/index.js:148:14
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at exports.globalHandleError (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/error.js:8:9)
