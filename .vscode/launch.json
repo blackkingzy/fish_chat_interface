@@ -8,16 +8,11 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "runtimeArgs": [
-                "-r",
-                "ts-node/register"
-            ],
+            "runtimeArgs": ["-r", "ts-node/register"],
             "args": [
                 "${workspaceRoot}/src/server.ts" // 入口文件
             ],
-            "env": {
-                "zhangyue": "debug"
-            }
+            "env": { "NODE_ENV": "debug" }
         }
     ]
 }

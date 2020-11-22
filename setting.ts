@@ -1,7 +1,7 @@
 import { Setting } from "black-ts"
 
 const setting: Setting = {
-    token: false,
+    token: true,
     database: false,
     httplog: true,
     tconfig: {
