@@ -3,6 +3,7 @@ import { get, success, post, body, generate, blackError } from 'black-ts'
 import { generateRandomNumbers } from '../untils'
 import { Store } from '../store'
 import { User } from '../type'
+import Helper from '../helper'
 
 class UserController {
     /**
@@ -63,10 +64,7 @@ class UserController {
         //传了room_No
         if (room_No) {
             if (store.isHasRoom(room_No)) {
-                throw new blackError(
-                    424,
-                    new Error('The room is already occupied')
-                )
+                throw new blackError(424, new Error(Helper.getMessage('M001')))
             } else {
                 store.createRoom(<User>user_info, room_No)
                 console.log(store)
@@ -125,12 +123,8 @@ class UserController {
     /**
      * @param ctx
      */
-    @get('/quit')
-    async quitRoom(ctx: Koa.Context) {
-        const store = ctx.store as Store
-        const { room_No, user_id } = ctx.query
-        store.quitRoom(user_id, room_No)
-        console.log(store)
-        ctx.body = '离开房间成功'
+    @get('/test', { tokenVerify: false })
+    async test(ctx: Koa.Context) {
+        ctx.body = Helper.getMessage('M001')
     }
 }

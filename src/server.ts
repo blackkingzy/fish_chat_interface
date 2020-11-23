@@ -1,12 +1,10 @@
-import { Black } from "black-ts"
-import { EnableSocketServer } from "./factory"
-import { initStore } from "./mids"
-
+import { Black } from 'black-ts'
+import { EnableSocketServer } from './factory'
+import { initStore, initMessage } from './mids'
 
 const black = new Black({
     factory: [EnableSocketServer],
-    mids: [initStore]
+    mids: [initStore, initMessage],
 })
 
-
-black.listen(3010)//删除进程
+black.listen(3010) //删除进程
