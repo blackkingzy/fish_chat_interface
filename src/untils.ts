@@ -1,13 +1,11 @@
-export const remove = <T>(element: T, arr: T[]): void => {
-    // if (typeof element === 'object') {
-    //     array.forEach(element => {
-
-    //     });
-    // }
-    const index = arr.indexOf(element)
-
-    arr.splice(index, 1)
-
+export const formatCookies = (cookies: string): cookies => {
+    const tempCookies: cookies = {}
+    const arrayCookies = cookies.split(';')
+    for (const cookie of arrayCookies) {
+        const tempArray = cookie.split('=')
+        tempCookies[tempArray[0].trim()] = tempArray[1]
+    }
+    return tempCookies
 }
 
 /**
@@ -18,3 +16,5 @@ export const remove = <T>(element: T, arr: T[]): void => {
 export const generateRandomNumbers = (N: number): number => {
     return Math.floor(Math.random() * Math.pow(10, N))
 }
+
+type cookies = { [key: string]: string }

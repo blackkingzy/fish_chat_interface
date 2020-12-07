@@ -1,35 +1,55 @@
 import Koa from 'koa'
-import { get, success, post, body, generate, blackError } from 'black-ts'
+import {
+    get,
+    del,
+    success,
+    post,
+    body,
+    generate,
+    blackError,
+    tokenVerify,
+} from 'black-ts'
 import { generateRandomNumbers } from '../untils'
 import { Store } from '../store'
 import { User } from '../type'
 import Helper from '../helper'
+import { verifyUserName } from './mids'
 
 class UserController {
     /**
      * @param ctx
      */
-    @post('/enter', { tokenVerify: false })
+    @post('/enter', { tokenVerify: false, middlewares: [verifyUserName] })
     @body({
         room_No: {
             type: 'string',
-            // validator: (rule: any, value: string) => {
-            //     if (value !== "zhangyue") {
-            //         return new Zhangyue(200, "FANGJIAN HAO BU CUN ZAI");
-            //     }
-            //     return true;
-            // },
+            required: true,
+        },
+        user_info: {
+            type: 'object',
+            required: true,
+            fields: {
+                user_id: { type: 'string', required: true },
+                user_name: {
+                    type: 'string',
+                    required: true,
+                },
+            },
         },
     })
     async enter(ctx: Koa.Context) {
         // 1.验证房间号是否存在
         const { room_No, user_info } = ctx.request.body
+        
         console.log(ctx.request.body)
         let res = null
 
         const store = ctx.store as Store
         if (store.isHasRoom(room_No)) {
-            store.joinRoom(<User>user_info, room_No)
+            const user = new User()
+            user.setUserId(user_info.user_id)
+            user.setUserName(user_info.user_name)
+            store.joinRoom(user, room_No)
             console.log(ctx.store)
             res = {
                 token: generate({ room_No, user_info }),
@@ -38,7 +58,7 @@ class UserController {
             }
             success(ctx, res)
         } else {
-            throw new blackError(423, new Error('The room does not exist'))
+            throw new blackError(425, new Error('The room does not exist'))
         }
         // 2.房间不存在，返回房间不存在
         // 3.房间存在，让其进入房间
@@ -66,7 +86,10 @@ class UserController {
             if (store.isHasRoom(room_No)) {
                 throw new blackError(424, new Error(Helper.getMessage('M001')))
             } else {
-                store.createRoom(<User>user_info, room_No)
+                const user = new User()
+                user.setUserId(user_info.user_id)
+                user.setUserName(user_info.user_name)
+                store.createRoom(<User>user, room_No)
                 console.log(store)
                 res = {
                     token: generate({ room_No, user_info }),
@@ -81,7 +104,10 @@ class UserController {
             while (store.isHasRoom(randomRoomNo)) {
                 randomRoomNo = String(generateRandomNumbers(4))
             }
-            store.createRoom(<User>user_info, randomRoomNo)
+            const user = new User()
+            user.setUserId(user_info.user_id)
+            user.setUserName(user_info.user_name)
+            store.createRoom(user, randomRoomNo)
             console.log(store)
             res = {
                 token: generate({ room_No: randomRoomNo, user_info }),
@@ -97,34 +123,47 @@ class UserController {
      * @param ctx test
      */
 
-    @get('/info')
+    @get('/info', { tokenVerify: false })
     async getInfo(ctx: Koa.Context) {
         const store = ctx.store as Store
         let res = null
-        //获取解码token的数据
+        let res_room_No: string
+        const user = new User()
 
-        const { user_info, room_No } = ctx.data
-        //判断该房间是否被占用,如果没有被占用,就重新创建该房间
-        if (store.isHasRoom(room_No)) {
-            //该房间被占用
-            throw new blackError(424, new Error('The room is already occupied'))
-        } else {
-            //该房间没有被占用
-            store.createRoom(<User>user_info, room_No)
-            res = {
-                user_info: user_info,
-                room_No: room_No,
-                room_info: store.rooms[room_No],
-            }
-            success(ctx, res)
+        //改为手动验证token
+        try {
+            const { user_info, room_No } = tokenVerify(
+                ctx.headers.authorization
+            )
+            user.setUserId(user_info.user_id)
+            user.setUserName(user_info.user_name)
+            res_room_No = room_No
+            console.log(ctx.cookies.get('io'));       
+        } catch (error) {
+            const room_no = ctx.cookies.get('room_no')
+            const io = ctx.cookies.get('io')
+            await store.quitRoom(room_no as string, io as string)
+            console.log(store)
+            throw new blackError(423, error)
         }
+        res = {
+            user_info: user,
+            room_No: res_room_No,
+            room_info: store.rooms[res_room_No],
+        }
+        success(ctx, res)
     }
 
     /**
      * @param ctx
      */
-    @get('/test', { tokenVerify: false })
-    async test(ctx: Koa.Context) {
-        ctx.body = Helper.getMessage('M001')
+    @del('/quit', { tokenVerify: false })
+    async quitRoom(ctx: Koa.Context) {
+        const store = ctx.store as Store
+        const room_No = ctx.cookies.get('room_no')
+        const socket_id = ctx.cookies.get('io')
+        await store.quitRoom(room_No as string, socket_id as string)
+        console.log(store)
+        success(ctx)
     }
 }

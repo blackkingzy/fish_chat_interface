@@ -1,3 +1,4 @@
 {
-    "M001": "The room is already occupied"
+    "M001": "The room is already occupied",
+    "M002": "Nickname already taken"
 }
