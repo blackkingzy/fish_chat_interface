@@ -1,0 +1,33 @@
+2021.03.14 22:27:56:088 error: TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controller/user/userController.ts[0m:[93m38[0m:[93m29[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | string[] | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+
+[7m38[0m         if (store.isHasRoom(room_No)) {
+[7m  [0m [91m                            ~~~~~~~[0m
+[96msrc/controller/user/userController.ts[0m:[93m41[0m:[93m62[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | string[] | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+
+[7m41[0m                 isHasPassword: Boolean(store.getRoomPassword(room_No)),
+[7m  [0m [91m                                                             ~~~~~~~[0m
+[96msrc/controller/user/userController.ts[0m:[93m159[0m:[93m17[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+
+[7m159[0m                 ctx.headers.authorization
+[7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/Volumes/T7/projects/fish_chat_interface/node_modules/ts-node/src/index.ts:434:12)
+    at reportTSError (/Volumes/T7/projects/fish_chat_interface/node_modules/ts-node/src/index.ts:438:19)
+    at getOutput (/Volumes/T7/projects/fish_chat_interface/node_modules/ts-node/src/index.ts:578:36)
+    at Object.compile (/Volumes/T7/projects/fish_chat_interface/node_modules/ts-node/src/index.ts:775:32)
+    at Module.m._compile (/Volumes/T7/projects/fish_chat_interface/node_modules/ts-node/src/index.ts:858:43)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Object.require.extensions.<computed> [as .ts] (/Volumes/T7/projects/fish_chat_interface/node_modules/ts-node/src/index.ts:861:12)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/util.js:15:28
+    at Array.forEach (<anonymous>)
+    at Object.load (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/util.js:15:10)
+    at Black.start (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:61:22)
+    at Black.listen (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:67:24)

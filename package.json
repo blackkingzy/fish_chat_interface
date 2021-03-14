@@ -5,7 +5,9 @@
     "main": "index.js",
     "scripts": {
         "dev": "ts-node ./src/server.ts",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch": "nodemon --watch 'src/**/*' --exec ts-node ./src/server.ts -e ts tsx",
+        "clean": "nodemon clean exit"
     },
     "keywords": [
         "socket"
@@ -14,9 +16,9 @@
     "license": "MIT",
     "dependencies": {
         "black-ts": "^1.0.16",
-        "socket.io": "^2.3.0"
+        "socket.io": "^2.4.1"
     },
     "devDependencies": {
-        "@types/socket.io": "^2.1.11"
+        "@types/socket.io": "^2.1.13"
     }
 }

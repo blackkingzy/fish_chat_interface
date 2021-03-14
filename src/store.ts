@@ -26,13 +26,14 @@ export class Store {
      * @param user
      * @param room_No
      */
-    createRoom(user: User, room_No: string) {
+    createRoom(user: User, room_info: any) {
         const newRoom: Room = {
+            room_password: room_info.room_password,
             users: [user],
             user_count: 1,
             chat_history: [],
         }
-        this.rooms[room_No] = newRoom
+        this.rooms[room_info.room_No] = newRoom
         this.room_count += 1
     }
 
@@ -73,8 +74,8 @@ export class Store {
                 leave_user_name: user_name_leave,
                 room_info: this.rooms[room_No],
             })
-            console.log(this, '有人离开之后store')
         }
+        console.log(this, '有人离开之后store')
     }
 
     /**
@@ -156,6 +157,26 @@ export class Store {
             if (user.user_id === user_id) {
                 return true
             }
+        }
+        return false
+    }
+
+    /**
+     * 房间是否有有密码
+     * @param room_No 
+     */
+    getRoomPassword(room_No: string): string {
+        return this.rooms[room_No].room_password
+    }
+
+    /**
+     * 密码验证
+     * @param room_No
+     * @param password
+     */
+    verifyPassword(room_No: string, password: string): boolean {
+        if (this.rooms[room_No].room_password && password === this.rooms[room_No].room_password) {
+            return true
         }
         return false
     }

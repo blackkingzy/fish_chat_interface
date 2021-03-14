@@ -1,3 +1,6 @@
+import fs from 'fs'
+
+
 export const formatCookies = (cookies: string): cookies => {
     const tempCookies: cookies = {}
     const arrayCookies = cookies.split(';')
@@ -18,3 +21,13 @@ export const generateRandomNumbers = (N: number): number => {
 }
 
 type cookies = { [key: string]: string }
+
+
+/**
+ * 解析json文件
+ * @param folder 
+ */
+export const parseJson = (folder: string) => {
+    return JSON.parse(fs.readFileSync(folder).toString())
+}
+

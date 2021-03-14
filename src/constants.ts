@@ -9,4 +9,13 @@ export class Constants {
         DISCONNECT: 'disconnect', // 断开连接事件
         ERROR: 'error', //连接失败事件
     }
+
+    public static CUSTOM_STATUS_CODE = {
+        VALIDATION_ERROR: 422, //请求参数字段验证错误
+        TOKEN_ERROR: 423, //token 一系列错误
+        ROOM_OCCUPIED: 424, //房间被占用
+        ROOM_NOT_EXIST: 425, //房间不存在
+        PASSWORD_ERROR: 426,//密码错误
+        NICKNAME_OCCUPIED: 427,//昵称被占用
+    }
 }

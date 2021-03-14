@@ -1,6 +1,7 @@
 import Koa from 'koa'
 import { Store } from '../store'
 import Helper, { lang } from '../helper'
+import { parseJson } from '../untils'
 import path from 'path'
 import fs from 'fs'
 
@@ -8,10 +9,6 @@ import fs from 'fs'
 export const initStore = async (ctx: Koa.Context, next: Koa.Next) => {
     ctx.store = Store.getInstance()
     await next()
-}
-
-const parseJson = (folder: string) => {
-    return JSON.parse(fs.readFileSync(folder).toString())
 }
 
 const readJson = (folder: string) => {

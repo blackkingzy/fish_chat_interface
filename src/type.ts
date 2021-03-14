@@ -30,6 +30,7 @@ export class User {
 }
 
 export interface Room {
+    room_password: string,
     users: Array<User>
     user_count: number
     chat_history: Array<Message>
