@@ -31,3 +31,52 @@
     at Object.load (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/util.js:15:10)
     at Black.start (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:61:22)
     at Black.listen (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:67:24)
+2021.03.16 21:59:16:885 error: Error: 昵称已被占用
+    at exports.verifyUserName (/Volumes/T7/projects/fish_chat_interface/src/controller/user/mids/index.ts:13:78)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-router/lib/router.js:372:16
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-router/lib/router.js:377:31)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:23:15
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at exports.initStore (/Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:11:11)
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:51:19
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/util.js:29:15
+    at dispatch (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-compose/index.js:42:32)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/koa-body/index.js:148:14
+2021.03.16 22:00:20:796 error: Error: 房间号已经被占用
+    at createRoom (/Volumes/T7/projects/fish_chat_interface/src/controller/user/userController.ts:109:82)
+    at target.<computed> (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/validator.js:25:29)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at /Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:23:9
+    at exports.initStore (/Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:11:5)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:51:13
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/util.js:29:9
+    at exports.globalHandleError (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/error.js:8:9)
+    at logger (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-logger/index.js:67:7)
+2021.03.16 22:07:54:270 error: Error: 密码错误
+    at enter (/Volumes/T7/projects/fish_chat_interface/src/controller/user/userController.ts:67:83)
+    at target.<computed> (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/validator.js:25:29)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at exports.verifyUserName (/Volumes/T7/projects/fish_chat_interface/src/controller/user/mids/index.ts:15:5)
+    at /Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:23:9
+    at exports.initStore (/Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:11:5)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:51:13
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/util.js:29:9
+    at exports.globalHandleError (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/error.js:8:9)
+    at logger (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-logger/index.js:67:7)
+2021.03.16 22:07:57:734 error: Error: 密码错误
+    at enter (/Volumes/T7/projects/fish_chat_interface/src/controller/user/userController.ts:67:83)
+    at target.<computed> (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/validator.js:25:29)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at exports.verifyUserName (/Volumes/T7/projects/fish_chat_interface/src/controller/user/mids/index.ts:15:5)
+    at /Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:23:9
+    at exports.initStore (/Volumes/T7/projects/fish_chat_interface/src/mids/index.ts:11:5)
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/black.js:51:13
+    at /Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/util.js:29:9
+    at exports.globalHandleError (/Volumes/T7/projects/fish_chat_interface/node_modules/black-ts/dist/lib/error.js:8:9)
+    at logger (/Volumes/T7/projects/fish_chat_interface/node_modules/koa-logger/index.js:67:7)

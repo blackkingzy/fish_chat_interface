@@ -1,0 +1,6 @@
+{
+    "M001": "The room is already occupied",
+    "M002": "Nickname already taken",
+    "M003": "Room does not exist",
+    "M004": "Incorrect password"
+}

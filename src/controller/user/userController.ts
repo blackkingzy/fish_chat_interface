@@ -57,7 +57,6 @@ class UserController {
         const { room_info, user_info } = ctx.request.body
         const { room_No, room_password } = room_info
 
-        console.log(ctx.request.body)
         let res = null
 
         const store = ctx.store as Store
@@ -80,14 +79,6 @@ class UserController {
         } else {
             throw new blackError(Constants.CUSTOM_STATUS_CODE.ROOM_NOT_EXIST, new Error(Helper.getMessage('M003')))
         }
-        // 2.房间不存在，返回房间不存在
-        // 3.房间存在，让其进入房间
-        // 4.进入房间后，房间人数加1，更新房间需要更新的内容
-        // console.log('test');
-        // logger.log({
-        //     level: 'info',
-        //     message: 'Hello distributed log files!'
-        // });
     }
 
     /**
@@ -99,7 +90,6 @@ class UserController {
         //注意断言的处理
         const store = ctx.store as Store
         const { room_info, user_info } = ctx.request.body
-        console.log(ctx.request.body)
         let res = null
 
         //传了room_No
@@ -161,7 +151,6 @@ class UserController {
             user.setUserId(user_info.user_id)
             user.setUserName(user_info.user_name)
             res_room_No = room_info.room_No
-            console.log(ctx.cookies.get('io'));
         } catch (error) {
             const room_no = ctx.cookies.get('room_no')
             const io = ctx.cookies.get('io')
@@ -185,7 +174,6 @@ class UserController {
         const store = ctx.store as Store
         const room_No = ctx.cookies.get('room_no')
         const socket_id = ctx.cookies.get('io')
-        console.log(room_No, socket_id)
         await store.quitRoom(room_No as string, socket_id as string)
         success(ctx)
     }

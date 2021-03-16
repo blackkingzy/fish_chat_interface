@@ -1,0 +1,18 @@
+2021.03.15 21:49:55:969 error: uncaughtException: ENOENT: no such file or directory, open '/Volumes/T7/projects/fish_chat_interface/dist/src/message/cn.json'
+Error: ENOENT: no such file or directory, open '/Volumes/T7/projects/fish_chat_interface/dist/src/message/cn.json'
+    at Object.openSync (fs.js:458:3)
+    at Object.readFileSync (fs.js:360:35)
+    at Object.exports.parseJson (/Volumes/T7/projects/fish_chat_interface/dist/src/untils.js:29:36)
+    at readJson (/Volumes/T7/projects/fish_chat_interface/dist/src/mids/index.js:18:36)
+    at Object.<anonymous> (/Volumes/T7/projects/fish_chat_interface/dist/src/mids/index.js:29:23)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/Volumes/T7/projects/fish_chat_interface/dist/src/server.js:5:16)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
